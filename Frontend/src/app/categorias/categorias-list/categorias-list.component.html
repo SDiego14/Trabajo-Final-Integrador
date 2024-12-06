@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-4">
+<h2 class="text-center p-4">Categorías Disponibles</h2>
+
+<table class="table table-striped">
+  <thead>
+    <button class="btn btn-primary mb-3" (click)="crearCategoria()">Añadir Categoría</button>
+  </thead>
+  <tbody>
+    <tr *ngFor="let categoria of categorias">
+      <td>{{ categoria.name }}</td>
+    </tr>
+    <tr *ngIf="!categorias || categorias.length === 0">
+      <td colspan="1">No hay categorías disponibles</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    </div>
+</div>
