@@ -64,8 +64,14 @@ export const routes: Routes = [
   { path: 'carrito', component: CarritoComponent },
   {
     path: 'admin',
-    component: AdminDashboardComponent,
     canActivate: [adminGuard],
+    children:[
+      {
+        path: '',
+        component: AdminDashboardComponent,
+      },
+    ]
+    
   },
   { path: 'unauthorized', component: UnauthorizedComponent },
 ];

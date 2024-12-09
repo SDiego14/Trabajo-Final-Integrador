@@ -1,0 +1,11 @@
+button.active {
+    background-color: #0056b3; 
+    color: white;             
+    border-color: #0056b3;
+}
+
+button:not(.active) {
+    background-color: transparent;
+    color: #007bff;
+    border-color: #007bff;
+}

@@ -22,16 +22,16 @@ export class CarritoService {
 
     if (existe) {
       // Si el producto no existe, lo agregamos al carrito
-      existe.cantidad = cant;
+      existe.cantidad += cant;
     } else {
       // si el producto existe en el carrito, actualizo la cantidad
       this.items.push({ producto: prod, cantidad: cant });
-      this.itemsSubject.next(this.items);
     }
+    this.itemsSubject.next(this.items);
   }
 
   eliminarProducto(producto: IProducto) {
-    this.items.filter((item) => item.producto.id !== producto.id);
+   this.items = this.items.filter((item) => item.producto.id !== producto.id);
     this.itemsSubject.next(this.items);
   }
 
@@ -41,11 +41,9 @@ export class CarritoService {
   }
 
   getTotal(): number {
-    let total = 0.0;
-
-    for (let item of this.items) {
-      total += item.producto.price * item.cantidad;
-    }
-    return total;
+    return this.items.reduce(
+      (total, item) => total + item.producto.price * item.cantidad,
+      0
+    );
   }
 }
