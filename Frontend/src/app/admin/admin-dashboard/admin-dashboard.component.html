@@ -1,1 +1,31 @@
-<p>admin-dashboard works!</p>
+<div class="container-fluid">
+    <h1 class="text-center p-4">Administrar</h1>
+    <div class="row justify-content-center">
+        <div class="row col-6">
+            <div class="btn-group" role="group" aria-label="Admin options">
+                <button 
+                    type="button" 
+                    class="btn btn-primary" 
+                    [class.active]="componenteActual === 'productos'"
+                    (click)="cargarComponente('productos')">
+                    Productos
+                </button>
+                <button 
+                    type="button" 
+                    class="btn btn-primary"
+                    [class.active]="componenteActual === 'categorias'"
+                    (click)="cargarComponente('categorias')">
+                    Categorias
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+        <div class="col-12">
+            <app-producto-list *ngIf="componenteActual === 'productos'"></app-producto-list>
+            <app-categorias-list *ngIf="componenteActual === 'categorias'"></app-categorias-list>
+        </div>
+    </div>
+</div>
+
+

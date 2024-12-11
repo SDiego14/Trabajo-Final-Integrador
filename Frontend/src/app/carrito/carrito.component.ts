@@ -4,6 +4,7 @@ import { faCreditCard } from '@fortawesome/free-solid-svg-icons';
 import { ICarritoItem } from './carrito-item.model';
 import { CarritoService } from './carrito.service';
 import { CommonModule, CurrencyPipe } from '@angular/common';
+import { IProducto } from '../productos/producto.model';
 
 @Component({
   selector: 'app-carrito',
@@ -28,4 +29,26 @@ export class CarritoComponent implements OnInit {
   getTotal(): number {
     return this.carritoService.getTotal();
   }
+
+  incrementarCantidad(item: ICarritoItem) {
+    this.carritoService.agregarProducto(item.producto, 1);
+  }
+
+  disminuirCantidad(item: ICarritoItem) {
+    if (item.cantidad > 1) {
+      this.carritoService.agregarProducto(item.producto, -1);
+    } else {
+      const confirmacion = confirm(
+        '¿Deseas eliminar este producto del carrito?'
+      );
+      if (confirmacion) {
+        this.eliminarProducto(item.producto);
+      }
+    }
+  }
+
+  eliminarProducto(producto: IProducto){
+    this.carritoService.eliminarProducto(producto);
+  }
+
 }

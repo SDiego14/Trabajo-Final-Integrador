@@ -12,8 +12,13 @@
   <tbody>
     <tr *ngFor="let item of items">
       <td>{{ item.producto.name }}</td>
-      <td>{{ item.cantidad }}</td>
+      <td>
+      <button class="btn btn-primary btn-sm" (click)="disminuirCantidad(item)"><span class="d-none d-md-inline"> - </span></button>
+      {{ item.cantidad }}
+      <button class="btn btn-primary btn-sm" (click)="incrementarCantidad(item)"><span class="d-none d-md-inline"> + </span></button>
+      </td>
       <td>{{ item.producto.price | currency }}</td>
+      <button (click)="eliminarProducto(item.producto)">Eliminar</button>
       <td>{{ item.cantidad * item.producto.price | currency }}</td>
     </tr>
   </tbody>

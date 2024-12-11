@@ -10831,11 +10831,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documentos\\Dev\\Integracion\\ProductCategoryCrud\\ProductCategoryCrud.csproj",
+      "projectUniqueName": "D:\\Documentos\\Dev\\Trabajo-Final-Integrador\\Backend\\ProductCategoryCrud.csproj",
       "projectName": "ProductCategoryCrud",
-      "projectPath": "D:\\Documentos\\Dev\\Integracion\\ProductCategoryCrud\\ProductCategoryCrud.csproj",
+      "projectPath": "D:\\Documentos\\Dev\\Trabajo-Final-Integrador\\Backend\\ProductCategoryCrud.csproj",
       "packagesPath": "C:\\Users\\Pingui\\.nuget\\packages\\",
-      "outputPath": "D:\\Documentos\\Dev\\Integracion\\ProductCategoryCrud\\obj\\",
+      "outputPath": "D:\\Documentos\\Dev\\Trabajo-Final-Integrador\\Backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Pingui\\AppData\\Roaming\\NuGet\\NuGet.Config"
