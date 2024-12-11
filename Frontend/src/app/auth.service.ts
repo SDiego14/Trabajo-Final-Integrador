@@ -29,11 +29,11 @@ export class AuthService {
       .pipe(
         tap((response) => {
           localStorage.setItem(this.TOKEN_KEY, response.token);
-          this.isLoggedInSubject.next(true);
 
           // llamar a la api de profile y guardar el role en el local storage
           this.profile().subscribe((res) => {
             localStorage.setItem(this.ROLE_KEY, res.role!);
+            this.isLoggedInSubject.next(true);
           });
         }),
         map(() => true),
